@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:jawla_app/components/button.dart';
 import 'package:jawla_app/components/text_field.dart';
 import 'package:jawla_app/constants/constants.dart';
 import 'package:flutter/services.dart';
@@ -9,6 +8,8 @@ import 'package:jawla_app/extension/format.dart';
 import 'package:jawla_app/services/api/auth/forget_password.dart';
 import 'package:jawla_app/services/api/auth/update_password.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
+
+import '../components/buttons/button.dart';
 
 class Page1 extends StatefulWidget {
   const Page1({super.key});
@@ -90,10 +91,10 @@ class _Page1State extends State<Page1> {
   snackBar(String? message) {
     return ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        backgroundColor: myTertiaryColor,
+        backgroundColor: greyButtonColor,
         content: Text(
           message!,
-          style: const TextStyle(color: myPrimaryColor, fontSize: 14),
+          style: const TextStyle(color: primaryColor, fontSize: 14),
         ),
         duration: const Duration(seconds: 3),
       ),
@@ -300,15 +301,15 @@ class _Page1State extends State<Page1> {
           borderRadius: BorderRadius.circular(5),
           fieldHeight: 50,
           fieldWidth: 40,
-          activeColor: myTertiaryColor,
-          inactiveColor: myTertiaryColor,
-          selectedColor: myPrimaryColor,
+          activeColor: greyButtonColor,
+          inactiveColor: greyButtonColor,
+          selectedColor: primaryColor,
           activeFillColor: Colors.white,
           inactiveFillColor: Colors.white,
           selectedFillColor: Colors.white,
         ),
 
-        cursorColor: myPrimaryColor,
+        cursorColor: primaryColor,
         animationDuration: const Duration(milliseconds: 300),
         enableActiveFill: true,
         controller: pinCodeController,

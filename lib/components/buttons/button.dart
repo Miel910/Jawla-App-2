@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../constants/constants.dart';
+import '../../constants/constants.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({
@@ -17,7 +17,7 @@ class CustomButton extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15),
           ),
-          backgroundColor: myPrimaryColor,
+          backgroundColor: primaryColor,
           elevation: 0,
           minimumSize: const Size(200, 45),
         ),

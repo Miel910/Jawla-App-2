@@ -42,7 +42,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
           });
         },
         icon: Icon(isEncrypted! ? Icons.visibility : Icons.visibility_off,
-            color: myTertiaryColor));
+            color: greyButtonColor));
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
@@ -51,15 +51,15 @@ class _CustomTextFieldState extends State<CustomTextField> {
           controller: widget.controller,
           minLines: widget.minLines,
           maxLines: widget.maxLines,
-          cursorColor: myPrimaryColor,
+          cursorColor: primaryColor,
           decoration: InputDecoration(
               filled: true,
               fillColor: Colors.white,
               enabledBorder: const OutlineInputBorder(
-                  borderSide: BorderSide(color: myTertiaryColor),
+                  borderSide: BorderSide(color: greyButtonColor),
                   borderRadius: BorderRadius.all(Radius.circular(20))),
               focusedBorder: const OutlineInputBorder(
-                borderSide: BorderSide(color: myTertiaryColor),
+                borderSide: BorderSide(color: greyButtonColor),
                 borderRadius: BorderRadius.all(
                   Radius.circular(20),
                 ),
@@ -67,8 +67,8 @@ class _CustomTextFieldState extends State<CustomTextField> {
               contentPadding:
                   const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
               hintText: widget.hint,
-              hintStyle: const TextStyle(color: myTertiaryColor),
-              prefixIcon: Icon(widget.iconName, color: myTertiaryColor),
+              hintStyle: const TextStyle(color: greyButtonColor),
+              prefixIcon: Icon(widget.iconName, color: greyButtonColor),
               suffixIcon: widget.isPassword ?? false ? showHidePassword : null),
           obscureText: widget.isPassword ?? false ? isEncrypted! : false),
     );

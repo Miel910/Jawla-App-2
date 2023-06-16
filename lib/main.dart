@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
-import 'screens/reset_password_screen.dart';
+import 'package:jawla_app/screens/home_screen.dart';
+// import 'package:jawla_app/screens/login_screen.dart';
 
 void main() {
   runApp(const MainApp());
@@ -14,7 +14,7 @@ class MainApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: Page1(),
+        body: HomeScreen(),
       ),
     );
   }
