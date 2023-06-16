@@ -1,10 +1,9 @@
-import 'package:blurrycontainer/blurrycontainer.dart';
 import 'package:flutter/material.dart';
 import '../constants/constants.dart';
 import 'buttons/favorite_button.dart';
 
-class BigActivityCard extends StatelessWidget {
-  const BigActivityCard({
+class ActivityCard extends StatelessWidget {
+  const ActivityCard({
     super.key,
     required this.activityThumbnail,
     required this.price,
@@ -20,9 +19,9 @@ class BigActivityCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 197,
-      width: 164,
-      margin: const EdgeInsets.symmetric(vertical: 18, horizontal: 12),
+      height: 81,
+      width: AppLayout.getSize(context).width,
+      margin: const EdgeInsets.symmetric(vertical: 6),
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
         color: Colors.white,
@@ -31,74 +30,51 @@ class BigActivityCard extends StatelessWidget {
           BoxShadow(
             color: Colors.black.withOpacity(0.1),
             spreadRadius: 0,
-            blurRadius: 15,
+            blurRadius: 11,
             offset: const Offset(0, 4),
           ),
         ],
       ),
-      child: Column(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Stack(
+          Row(
             children: [
               // Thumbnail
               SizedBox(
-                height: 135,
-                width: 144,
+                height: 55,
+                width: 80,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(9),
                   child: Image.asset(activityThumbnail, fit: BoxFit.cover),
                 ),
               ),
+              const SizedBox(width: 10),
 
-              // Price
-              Positioned(
-                right: 10,
-                bottom: 10,
-                child: BlurryContainer(
-                  blur: 12,
-                  height: 24,
-                  width: 51,
-                  elevation: 0,
-                  color: Colors.white30,
-                  padding: const EdgeInsets.symmetric(vertical: 1),
-                  child: Center(
-                    child: Text(
-                      price != "FREE" ? '$price SR' : price,
-                      style: const TextStyle(
-                        fontSize: 10,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
-          height8,
-
-          // Activity Info
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
+              // Activity Info
               Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(activityName, style: headLineStyle4),
-                  height4,
                   Row(
                     children: [
+                      Text(activityName, style: headLineStyle4),
+                      width8,
                       const Icon(Icons.location_on_sharp,
-                          color: primaryColor, size: 11),
+                          color: primaryColor, size: 12),
                       const SizedBox(width: 2),
                       Text(city, style: headLineStyle6),
                     ],
                   ),
+                  Text(
+                    price != "FREE" ? '$price SR' : price,
+                    style: headLineStyle5.copyWith(fontSize: 16),
+                  ),
                 ],
               ),
-              const FavoriteButton(),
             ],
-          )
+          ),
+          const FavoriteButton(iconSize: 20),
         ],
       ),
     );

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:jawla_app/screens/home_screen.dart';
-// import 'package:jawla_app/screens/login_screen.dart';
+import 'package:jawla_app/my_navigation_bar.dart';
 
 void main() {
   runApp(const MainApp());
@@ -14,7 +13,7 @@ class MainApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: HomeScreen(),
+        body: MyNavigationBar(),
       ),
     );
   }

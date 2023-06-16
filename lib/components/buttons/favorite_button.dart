@@ -3,10 +3,11 @@ import 'package:jawla_app/constants/constants.dart';
 import 'package:like_button/like_button.dart';
 
 class FavoriteButton extends StatefulWidget {
-  const FavoriteButton({super.key});
+  const FavoriteButton({super.key, this.iconSize = 12});
 
   @override
   State<FavoriteButton> createState() => _FavoriteButtonState();
+  final double iconSize;
 }
 
 class _FavoriteButtonState extends State<FavoriteButton> {
@@ -15,12 +16,12 @@ class _FavoriteButtonState extends State<FavoriteButton> {
   @override
   Widget build(BuildContext context) {
     return CircleAvatar(
-      radius: 12,
+      radius: widget.iconSize,
       backgroundColor: const Color(0xFFF5F5F5),
       child: LikeButton(
-        size: 12,
+        size: widget.iconSize,
         circleColor:
-            const CircleColor(start: primaryColor, end: secondaryColor),
+            const CircleColor(start: secondaryColor, end: secondaryColor),
         bubblesColor: const BubblesColor(
           dotPrimaryColor: primaryColor,
           dotSecondaryColor: secondaryColor,
@@ -29,15 +30,10 @@ class _FavoriteButtonState extends State<FavoriteButton> {
           return Icon(
             Icons.favorite,
             color: isLiked ? primaryColor : const Color(0xFFCECECE),
-            size: 12,
+            size: widget.iconSize,
           );
         },
       ),
-      // Icon(
-      //   Icons.favorite,
-      //   size: 12,
-      //   color: (clicked == true) ? primaryColor : const Color(0xFFCECECE),
-      // ),
     );
   }
 }

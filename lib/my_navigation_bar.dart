@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:jawla_app/screens/home_screen.dart';
 import 'constants/constants.dart';
 
 class MyNavigationBar extends StatefulWidget {
@@ -12,7 +12,7 @@ class MyNavigationBar extends StatefulWidget {
 class _MyNavigationBarState extends State<MyNavigationBar> {
   int _selectedIndex = 0;
   static final List<Widget> _widgetOptions = <Widget>[
-    const Text("Home"),
+    const HomeScreen(),
     const Text("Plan"),
     const Text("Favorite"),
     const Text("Profile"),
@@ -30,24 +30,44 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
       body: Center(
         child: _widgetOptions[_selectedIndex],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _selectedIndex,
-        onTap: _onItemTapped,
-        elevation: 10,
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
-        selectedItemColor: primaryColor,
-        unselectedItemColor: const Color(0xFFE3E0D9),
-        type: BottomNavigationBarType.fixed,
-        iconSize: 30,
-        items: const [
-          BottomNavigationBarItem(
-              icon: Icon(Icons.home_rounded), label: "Home"),
-          BottomNavigationBarItem(icon: Icon(Icons.timeline), label: "Plan"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.favorite_rounded), label: "Favorite"),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
-        ],
+      bottomNavigationBar: Container(
+        decoration: const BoxDecoration(
+          boxShadow: <BoxShadow>[
+            BoxShadow(
+                color: Color.fromARGB(10, 0, 0, 0),
+                blurRadius: 40,
+                offset: Offset(0, 10)),
+          ],
+        ),
+        child: BottomNavigationBar(
+          currentIndex: _selectedIndex,
+          onTap: _onItemTapped,
+          elevation: 50,
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
+          selectedItemColor: primaryColor,
+          unselectedItemColor: greyButtonColor,
+          type: BottomNavigationBarType.fixed,
+          iconSize: 30,
+          items: const [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home_rounded),
+              label: "Home",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.timeline),
+              label: "Plan",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.favorite_rounded),
+              label: "Favorite",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person),
+              label: "Profile",
+            ),
+          ],
+        ),
       ),
     );
   }
