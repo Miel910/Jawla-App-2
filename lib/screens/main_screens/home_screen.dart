@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import '../components/activity_card.dart';
-import '../components/my_search_bar.dart';
-import '../components/trending_activity_card.dart';
-import '../constants/constants.dart';
+import '../../components/cards/activity_card.dart';
+import '../../components/cards/big_activity_card.dart';
+import '../../components/general/my_search_bar.dart';
+import '../../constants/constants.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../constants/constants.dart';
-import 'buttons/favorite_button.dart';
+import '../../constants/constants.dart';
+import '../buttons/favorite_button.dart';
 
 class ActivityCard extends StatelessWidget {
   const ActivityCard({

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:jawla_app/extension/navigators.dart';
-import 'package:jawla_app/screens/signup_screen.dart';
 
-import '../components/buttons/login_buttons.dart';
-import '../components/login_text_field.dart';
-import '../constants/constants.dart';
-import '../my_navigation_bar.dart';
+import '../../components/buttons/my_button.dart';
+import '../../components/general/text_field.dart';
+import '../../constants/constants.dart';
+import '../../my_navigation_bar.dart';
+import 'signup_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});
@@ -31,12 +31,12 @@ class LoginScreen extends StatelessWidget {
               children: [
                 Image.asset("/login_signup_page/logo.png"),
                 height24,
-                LoginTextField(
+                MyTextField(
                   hint: "Email",
                   iconName: Icons.email_outlined,
                   controller: emailController,
                 ),
-                LoginTextField(
+                MyTextField(
                   hint: "Password",
                   iconName: Icons.lock_outline_rounded,
                   controller: passwordController,
@@ -51,7 +51,7 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
                 height24,
-                LoginButton(
+                MyButton(
                   onPressed: () {
                     context.push(screen: const MyNavigationBar());
                   },

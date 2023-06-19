@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:jawla_app/extension/navigators.dart';
-import 'package:jawla_app/screens/login_screen.dart';
 
-import '../components/buttons/login_buttons.dart';
-import '../components/login_text_field.dart';
-import '../constants/constants.dart';
+import '../../components/buttons/my_button.dart';
+import '../../components/general/text_field.dart';
+import '../../constants/constants.dart';
+import 'login_screen.dart';
 
 class SignUpScreen extends StatelessWidget {
   SignUpScreen({super.key});
@@ -39,35 +39,35 @@ class SignUpScreen extends StatelessWidget {
                 height24,
 
                 // Textfields
-                LoginTextField(
+                MyTextField(
                   hint: "Name",
                   iconName: Icons.person_outlined,
                   controller: nameController,
                 ),
-                LoginTextField(
+                MyTextField(
                   hint: "Email",
                   iconName: Icons.email_outlined,
                   controller: emailController,
                 ),
-                LoginTextField(
+                MyTextField(
                   hint: "Phone",
                   iconName: Icons.phone_iphone_outlined,
                   controller: phoneController,
                 ),
-                LoginTextField(
+                MyTextField(
                   hint: "Password",
                   iconName: Icons.lock_outline_rounded,
                   controller: passwordController,
                   isPassword: true,
                 ),
-                LoginTextField(
+                MyTextField(
                   hint: "Confirm password",
                   iconName: Icons.lock_outline_rounded,
                   controller: confirmPasswordController,
                   isPassword: true,
                 ),
                 height16,
-                LoginButton(
+                MyButton(
                   onPressed: () async {
                     // if (emailController.text.isNotEmpty &&
                     //     passwordController.text.isNotEmpty) {

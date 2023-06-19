@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:jawla_app/screens/home_screen.dart';
+import 'package:jawla_app/screens/main_screens/home_screen.dart';
+import 'package:jawla_app/screens/main_screens/plan_screen.dart';
 import 'constants/constants.dart';
 
 class MyNavigationBar extends StatefulWidget {
@@ -13,7 +14,7 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
   int _selectedIndex = 0;
   static final List<Widget> _widgetOptions = <Widget>[
     const HomeScreen(),
-    const Text("Plan"),
+    const PlanScreen(),
     const Text("Favorite"),
     const Text("Profile"),
   ];

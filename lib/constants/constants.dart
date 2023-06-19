@@ -41,6 +41,12 @@ const headLineStyle6 = TextStyle(
     color: greyTextColor,
     fontWeight: FontWeight.w600,
     fontFamily: 'Poppins');
+const headLineStyle7 = TextStyle(
+    fontSize: 18,
+    color: Colors.black,
+    fontWeight: FontWeight.w500,
+    fontFamily: 'Poppins');
+
 const textFieldStyle = TextStyle(
     fontSize: 12,
     color: greyTextColor,
@@ -93,6 +99,7 @@ const height8 = SizedBox(height: 8);
 const height16 = SizedBox(height: 16);
 const height24 = SizedBox(height: 24);
 const height32 = SizedBox(height: 32);
+const height40 = SizedBox(height: 40);
 const height48 = SizedBox(height: 48);
 const height56 = SizedBox(height: 56);
 const height64 = SizedBox(height: 64);
@@ -103,6 +110,7 @@ const width8 = SizedBox(width: 8);
 const width16 = SizedBox(width: 16);
 const width24 = SizedBox(width: 24);
 const width32 = SizedBox(width: 32);
+const width40 = SizedBox(height: 40);
 const width48 = SizedBox(height: 48);
 const width56 = SizedBox(height: 56);
 

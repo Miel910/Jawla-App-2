@@ -2,28 +2,33 @@ import 'package:flutter/material.dart';
 import 'package:jawla_app/constants/constants.dart';
 
 // ignore: must_be_immutable
-class LoginTextField extends StatefulWidget {
-  const LoginTextField(
-      {super.key,
-      required this.hint,
-      required this.iconName,
-      this.isPassword = false,
-      required this.controller,
-      this.minLines = 1,
-      this.maxLines = 1});
+class MyTextField extends StatefulWidget {
+  const MyTextField({
+    super.key,
+    required this.hint,
+    this.style = textFieldStyle,
+    this.iconName,
+    required this.controller,
+    this.minLines = 1,
+    this.maxLines = 1,
+    this.isPassword = false,
+    this.readOnly = false,
+  });
 
   final String hint;
-  final IconData iconName;
+  final TextStyle? style;
+  final IconData? iconName;
   final bool? isPassword;
+  final bool? readOnly;
   final TextEditingController controller;
   final int? minLines;
   final int? maxLines;
 
   @override
-  State<LoginTextField> createState() => _LoginTextFieldState();
+  State<MyTextField> createState() => _MyTextFieldState();
 }
 
-class _LoginTextFieldState extends State<LoginTextField> {
+class _MyTextFieldState extends State<MyTextField> {
   bool? isEncrypted;
 
   @override
@@ -53,10 +58,11 @@ class _LoginTextFieldState extends State<LoginTextField> {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 7),
       child: TextField(
-        style: textFieldStyle,
+        style: widget.style,
         controller: widget.controller,
         minLines: widget.minLines,
         maxLines: widget.maxLines,
+        readOnly: widget.readOnly!,
         cursorColor: primaryColor,
         decoration: InputDecoration(
           filled: false,

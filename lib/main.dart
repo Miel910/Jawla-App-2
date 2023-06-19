@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:jawla_app/my_navigation_bar.dart';
+import 'package:jawla_app/screens/main_screens/plan_screen.dart';
 
 void main() {
   runApp(const MainApp());
@@ -13,7 +13,7 @@ class MainApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: MyNavigationBar(),
+        body: PlanScreen(),
       ),
     );
   }

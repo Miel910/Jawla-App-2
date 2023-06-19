@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:jawla_app/components/text_field.dart';
+import 'package:jawla_app/components/general/custom_text_field.dart';
 import 'package:jawla_app/constants/constants.dart';
 import 'package:flutter/services.dart';
 import 'package:jawla_app/extension/format.dart';
@@ -9,7 +9,8 @@ import 'package:jawla_app/services/api/auth/forget_password.dart';
 import 'package:jawla_app/services/api/auth/update_password.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
-import '../components/buttons/button.dart';
+import '../../components/buttons/button.dart';
+
 
 class Page1 extends StatefulWidget {
   const Page1({super.key});
